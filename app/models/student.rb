@@ -32,7 +32,7 @@ class Student < ActiveRecord::Base
       format: { with: /\A[^a-zA-Z]+\z/,
       message: "should only contain numbers" }
     validates_each :first_name, :last_name do |record, attr, value|
-      record.errors.add(attr, "must start with Upper case") if
+      record.errors.add(attr, "should start with Upper case letter") if
       value =~ /\A[[:lower:]]/
   end
 end
